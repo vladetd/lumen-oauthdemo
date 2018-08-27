@@ -26,12 +26,6 @@ class AuthController extends Controller
      */
     public function issueAccessToken(Request $request)
     {
-        $this->validate($request, [
-            'scope' => 'required',
-            'grant_type' => 'required',
-            'client_id' => 'required'
-        ]);
-
         /** @var AuthorizationServer $oauthService */
         $oauthService = app(AuthorizationServer::class);
 
