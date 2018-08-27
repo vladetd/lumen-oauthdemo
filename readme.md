@@ -2,6 +2,9 @@
 
 *This example is created with laravel lumen but its decoupled so it can be used in every app with small changes*
 
+- Get yourself familiar with the oauth workflow so some of these terms like scopes and clients can be clearer to you.
+- Lumen uses HttpFoundation whereas the oauth2-server uses PSR requests - that is why a bridge is used between httpfoundation and psr.
+
 1. Database tables
 ```sql
 CREATE TABLE public.members
@@ -79,7 +82,7 @@ DB::table('members')->insert([
 ]);
 ```
 In the `routes/web.php` file a route is created for issuing access tokens.
-In the `app/Providers/AppServiceProvider` the Auth Server is booted. The Auth server has some dependencies which are implemented in `app/Services/Oauth`.
+In the `app/Providers/AppServiceProvider` the Auth Server is booted. The Auth server has some dependencies which are implemented in `app/Services/Oauth` folder.
 Those are the repositories and the entities. 
 
 The Auth Server is booted and grants are enabled with:
